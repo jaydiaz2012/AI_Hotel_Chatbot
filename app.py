@@ -115,9 +115,9 @@ if openai.api_key and (openai.api_key.startswith('sk-') and len(openai.api_key) 
     
     city = st.text_input("Enter the city (Netherlands):")
     type = st.text_input("Enter the type of bedroom:")
-    price = st.text_input("Enter price (Euros):")
+    price = st.number_input("Enter price (Euros):",  value=float, min_value=449.0, max_value=4069.0, placeholder="Type amount from 449 to 4069...")
     rating = st.number_input(
-    "Insert a Rating Number", value=None, placeholder="Type a number from 1 to 10..."
+    "Insert a Rating Number", value=int, min_value=1, max_value=10, placeholder="Type a number from 1 to 10..."
     )
     
     if st.button("Recommend My Hotel Room"):
